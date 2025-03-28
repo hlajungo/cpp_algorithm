@@ -1,0 +1,7 @@
+prefix=/media/hlajungo/D/linux/test_place/cuda/TestTemplate/install
+includedir=${prefix}/include
+
+Name: cxxopts
+Description: 
+Version: 3.0.0
+Cflags: -I${includedir}

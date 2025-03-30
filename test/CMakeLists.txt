@@ -75,7 +75,7 @@ doctest_discover_tests (${PROJECT_NAME})
 install (TARGETS ${PROJECT_NAME}
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
+  RUNTIME DESTINATION tests
 )
 
 # ---- code coverage ----

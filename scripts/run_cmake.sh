@@ -40,6 +40,7 @@ cmake -S ./test -B ./build/test -G "Unix Makefiles" \
   -DCMAKE_CXX_COMPILER=$CXX
 cmake --build ./build/test --parallel $cpu_core_num
 cmake --install ./build/test
+ctest --test-dir ./build/test
 
 # cmake documentation
 echo "------------------------------------------"
@@ -52,3 +53,6 @@ cmake --build ./build/documentation --parallel $cpu_core_num
 cmake --install ./build/documentation
 
 
+# template cpp
+cmake -S . -B build/headers -DCMAKE_INSTALL_PREFIX="./install"
+cmake --install ./build/headers/

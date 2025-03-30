@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "2.8.3")
    message(FATAL_ERROR "CMake >= 2.8.3 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.25)
+cmake_policy(VERSION 2.8.3...3.26)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -19,7 +19,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS cxxopts::cxxopts)
+foreach(_cmake_expected_target IN ITEMS Graph::Graph)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -55,11 +55,12 @@ if(_IMPORT_PREFIX STREQUAL "/")
   set(_IMPORT_PREFIX "")
 endif()
 
-# Create imported target cxxopts::cxxopts
-add_library(cxxopts::cxxopts INTERFACE IMPORTED)
+# Create imported target Graph::Graph
+add_library(Graph::Graph INTERFACE IMPORTED)
 
-set_target_properties(cxxopts::cxxopts PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+set_target_properties(Graph::Graph PROPERTIES
+  INTERFACE_COMPILE_OPTIONS "\$<\$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->"
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/Graph-1.0;${_IMPORT_PREFIX}/include/Graph-1.0"
 )
 
 if(CMAKE_VERSION VERSION_LESS 3.0.0)
@@ -67,7 +68,7 @@ if(CMAKE_VERSION VERSION_LESS 3.0.0)
 endif()
 
 # Load information for each installed configuration.
-file(GLOB _cmake_config_files "${CMAKE_CURRENT_LIST_DIR}/cxxopts-targets-*.cmake")
+file(GLOB _cmake_config_files "${CMAKE_CURRENT_LIST_DIR}/GraphTargets-*.cmake")
 foreach(_cmake_config_file IN LISTS _cmake_config_files)
   include("${_cmake_config_file}")
 endforeach()

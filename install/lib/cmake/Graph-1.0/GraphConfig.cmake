@@ -7,4 +7,4 @@ foreach(dependency ${SEPARATE_DEPENDENCIES})
   find_dependency(${args})
 endforeach()
 
-include("${CMAKE_CURRENT_LIST_DIR}/UseCudaLibTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/GraphTargets.cmake")
